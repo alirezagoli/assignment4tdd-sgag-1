@@ -9,6 +9,6 @@ public class Move {
     }
 
     public int getPileIndex() {
-
+        return pileIndex;
     }
 }
