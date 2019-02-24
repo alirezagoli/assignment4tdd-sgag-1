@@ -13,6 +13,6 @@ public class Move {
     }
 
     public int getNumStone() {
-
+        return numStone;
     }
 }
