@@ -16,4 +16,9 @@ public class MoveTest {
     public void getPileIndex() {
         assertEquals(4, move.getPileIndex());
     }
+
+    @Test
+    public void getNumStone() {
+        assertEquals(5, move.getNumStone());
+    }
 }

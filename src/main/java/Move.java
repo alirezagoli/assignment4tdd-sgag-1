@@ -11,4 +11,8 @@ public class Move {
     public int getPileIndex() {
         return pileIndex;
     }
+
+    public int getNumStone() {
+
+    }
 }
