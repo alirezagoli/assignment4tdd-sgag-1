@@ -3,14 +3,22 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 
 public class NimTest {
 
     private Nim nim;
+    private Board board;
+    private ComputerPlayer computerPlayer;
+    private String playerName;
 
     @Before
     public void setUp() {
-        nim = new Nim();
+        board = mock(Board.class);
+        playerName = "Sara";
+        computerPlayer = mock(ComputerPlayer.class);
+
+        nim = new Nim(playerName, board, computerPlayer, false);
     }
 
     @Test

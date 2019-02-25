@@ -2,9 +2,17 @@ import java.util.Scanner;
 
 public class Nim {
 
+    private Board board;
+    private String playerName;
+    private boolean turnToPlay; // false for human, true for computer
+    private ComputerPlayer computerPlayer;
 
-    public Nim() {
-
+    public Nim(String playerName, Board board, ComputerPlayer computerPlayer, boolean turnToPlay) {
+        this.board = board;
+        this.board.print();
+        this.playerName = playerName;
+        this.turnToPlay = turnToPlay;
+        this.computerPlayer = computerPlayer;
     }
 
     public boolean isInteger(String s) {
