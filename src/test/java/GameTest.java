@@ -33,4 +33,26 @@ public class GameTest {
                 "3. Exit\n";
         assertEquals(expectedOutput, outContent.toString());
     }
+
+    @Test
+    public void showHelp() {
+        game.showHelp();
+        String expectedOutput = "\n" +
+                "\t\t\tNIM GAME\n" +
+                "\n" +
+                "The game board consists of multiple number of piles, \n" +
+                "where each pile has a number of stone.\n" +
+                "Like the following board:\n" +
+                "\n" +
+                "\t \t \tX\n" +
+                "\tX\t \tX\n" +
+                "\tX\tX\tX\n" +
+                "\tX\tX\tX\n" +
+                "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n" +
+                "\t1\t2\t3\n" +
+                "Each player needs to make a move and remove any number of stones from one of the piles.\n" +
+                "But remember you need to remove at least one stone\n" +
+                "The player how has not any valid move will lose!\n\n";
+        assertEquals(expectedOutput, outContent.toString());
+    }
 }

@@ -10,6 +10,9 @@ public class Game {
         System.out.print("3. Exit\n");
     }
 
+    void showHelp() {
+    }
+
     public String getPlayerName() {
         return playerName;
     }
