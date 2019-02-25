@@ -19,6 +19,9 @@ public class Board {
         }
     }
 
+    /**
+     * Print the board
+     */
     public void print() {
         int maxStone = 0;
         int[] piles2 = new int[piles.length];
@@ -58,6 +61,10 @@ public class Board {
         System.out.println("\n");
     }
 
+    /**
+     * @param move a tuple of pile index and number of stone removed
+     * @return true if the move is possible and make that move, false otherwise
+     */
     public boolean makeMove(Move move) {
         if (move.getPileIndex() < 0 || move.getPileIndex() >= piles.length) {
             System.out.println("Not a valid move! Please try again.");
@@ -71,6 +78,11 @@ public class Board {
         return true;
     }
 
+    /**
+     * A game is over when there is no more stone left on the board in any of the piles
+     *
+     * @return true if the game is over, false otherwise
+     */
     public boolean gameOver() {
         for (int pile : piles) {
             if (pile != 0) {
