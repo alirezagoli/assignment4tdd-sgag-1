@@ -15,6 +15,10 @@ public class Nim {
         this.computerPlayer = computerPlayer;
     }
 
+    public boolean start() {
+
+    }
+
     public Move getHumanMove() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
