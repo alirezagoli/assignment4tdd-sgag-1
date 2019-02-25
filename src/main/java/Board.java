@@ -72,7 +72,12 @@ public class Board {
     }
 
     public boolean gameOver() {
-
+        for (int pile : piles) {
+            if (pile != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public int[] getPiles() {
