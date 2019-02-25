@@ -16,7 +16,34 @@ public class Nim {
     }
 
     public boolean start() {
-
+        while (!board.gameOver()) {
+            if (turnToPlay) {
+                // Computer turn to play
+                while (true) {
+                    System.out.println("It's computer turn.");
+                    Move move = computerPlayer.play(board.getPiles());
+                    if (board.makeMove(move)) {
+                        System.out.println("From pile " + (move.getPileIndex() + 1) + " removed " +
+                                move.getNumStone() + " stone.\n");
+                        board.print();
+                        break;
+                    } else {
+                        System.out.println("Oops! Not a valid move. Please try again.");
+                    }
+                }
+            } else {
+                // Human turn to play
+                while (true) {
+                    Move humanMove = getHumanMove();
+                    if (board.makeMove(humanMove)) {
+                        board.print();
+                        break;
+                    }
+                }
+            }
+            turnToPlay = !turnToPlay; //Change the player for the next move
+        }
+        return turnToPlay;
     }
 
     public Move getHumanMove() {
