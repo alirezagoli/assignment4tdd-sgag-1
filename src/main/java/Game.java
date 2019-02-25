@@ -37,7 +37,22 @@ public class Game {
     }
 
     int getNumPileFromPlayer(){
-        return 9;
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("How many piles do you like on the board? (between 2 and 9)");
+            String numPileStr = scanner.nextLine();
+            if (isInteger(numPileStr)) {
+                int numPile = Integer.parseInt(numPileStr);
+                if (numPile < 2 || numPile > 9) {
+                    System.out.println("Not a valid input! Please try again.\n");
+                } else {
+                    return numPile;
+                }
+
+            } else {
+                System.out.println("Not a valid input! Please try again.\n");
+            }
+        }
     }
 
     public String getPlayerName() {
