@@ -6,8 +6,11 @@ import java.io.*;
 
 import static org.junit.Assert.*;
 
+import static org.mockito.Mockito.*;
+
 public class GameTest {
     Game game;
+    ScoreBoard scoreBoard = mock(ScoreBoard.class);
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
     private final InputStream originalIn = System.in;
@@ -84,5 +87,18 @@ public class GameTest {
         assertFalse(game.isInteger("1a"));
         assertFalse(game.isInteger("1a1"));
         assertFalse(game.isInteger("10 s"));
+    }
+
+    @Test
+    public void updateScoreboard() {
+        boolean winTheGame;
+
+        winTheGame = true;
+        game.updateScoreboard(winTheGame);
+        verify(scoreBoard).incrementWin();
+
+        winTheGame = false;
+        game.updateScoreboard(winTheGame);
+        verify(scoreBoard).incrementLoss();
     }
 }

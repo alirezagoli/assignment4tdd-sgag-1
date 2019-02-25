@@ -55,6 +55,9 @@ public class Game {
         }
     }
 
+    void updateScoreboard(boolean winTheGame) {
+    }
+
     public String getPlayerName() {
         return playerName;
     }
