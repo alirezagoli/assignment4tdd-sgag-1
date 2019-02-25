@@ -59,7 +59,16 @@ public class Board {
     }
 
     public boolean makeMove(Move move) {
-
+        if (move.getPileIndex() < 0 || move.getPileIndex() >= piles.length) {
+            System.out.println("Not a valid move! Please try again.");
+            return false;
+        }
+        if (piles[move.getPileIndex()] < move.getNumStone() || move.getNumStone() < 1) {
+            System.out.println("Not a valid move! Please try again.");
+            return false;
+        }
+        piles[move.getPileIndex()] = piles[move.getPileIndex()] - move.getNumStone();
+        return true;
     }
 
     public int[] getPiles() {
