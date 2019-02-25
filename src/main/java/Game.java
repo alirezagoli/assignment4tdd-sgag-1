@@ -26,7 +26,7 @@ public class Game {
     }
 
     int getNumPileFromPlayer(){
-        return 0;
+        return 9;
     }
 
     public String getPlayerName() {
