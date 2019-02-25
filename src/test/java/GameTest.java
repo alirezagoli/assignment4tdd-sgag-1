@@ -64,4 +64,9 @@ public class GameTest {
         System.setIn(stream);
         assertEquals(9, game.getNumPileFromPlayer());
     }
+
+    @Test
+    public void isInteger() {
+        assertTrue(game.isInteger("0"));
+    }
 }

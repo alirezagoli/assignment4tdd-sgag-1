@@ -25,6 +25,10 @@ public class Game {
         System.out.print("The player how has not any valid move will lose!\n\n");
     }
 
+    public boolean isInteger(String s) {
+       return false;
+    }
+
     int getNumPileFromPlayer(){
         return 9;
     }
