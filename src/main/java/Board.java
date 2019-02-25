@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Board {
 
     private int[] p;
@@ -7,7 +9,11 @@ public class Board {
     }
 
     public void generateBoard() {
-
+        Random random = new Random();
+        for (int i = 0; i < p.length; i++) {
+            int numStone = random.nextInt(10) + 1;
+            p[i] = numStone;
+        }
     }
 
     public int[] getP() {
