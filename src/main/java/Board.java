@@ -58,6 +58,10 @@ public class Board {
         System.out.println("\n");
     }
 
+    public boolean makeMove(Move move) {
+
+    }
+
     public int[] getPiles() {
         return piles;
     }

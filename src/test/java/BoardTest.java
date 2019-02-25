@@ -6,6 +6,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 public class BoardTest {
@@ -40,6 +42,51 @@ public class BoardTest {
 
         String expectedOutput = "\n\t \t \tX\n\tX\t \tX\n\tX\tX\tX\n\tX\tX\tX\n\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\n\t1\t2\t3\n\n\n";
         assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void makeMove() {
+        Move move = mock(Move.class);
+
+        // Scenario 1:
+        // move = (1, 1) -> true
+        when(move.getPileIndex()).thenReturn(1);
+        when(move.getNumStone()).thenReturn(1);
+        assertTrue(board.makeMove(move));
+
+        // Scenario 2:
+        // move = (0, 1) -> true
+        when(move.getPileIndex()).thenReturn(0);
+        when(move.getNumStone()).thenReturn(1);
+        assertTrue(board.makeMove(move));
+
+        // Scenario 3:
+        // move = (0, 0) -> false
+        // numStone below 1
+        when(move.getPileIndex()).thenReturn(0);
+        when(move.getNumStone()).thenReturn(0);
+        assertFalse(board.makeMove(move));
+
+        // Scenario 4:
+        // move = (0, 7) -> false
+        // numStone out of bound
+        when(move.getPileIndex()).thenReturn(0);
+        when(move.getNumStone()).thenReturn(7);
+        assertFalse(board.makeMove(move));
+
+        // Scenario 5:
+        // move = (4, 1) -> false
+        // pile index out of bound
+        when(move.getPileIndex()).thenReturn(4);
+        when(move.getNumStone()).thenReturn(1);
+        assertFalse(board.makeMove(move));
+
+        // Scenario 6:
+        // move = (-1, 1) -> false
+        // pile index out of bound
+        when(move.getPileIndex()).thenReturn(-1);
+        when(move.getNumStone()).thenReturn(1);
+        assertFalse(board.makeMove(move));
     }
 
     @Test
