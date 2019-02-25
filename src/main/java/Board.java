@@ -7,9 +7,10 @@ public class Board {
     }
 
     public int[] getP() {
+        return p;
     }
 
     public void setP(int[] p) {
-
+        this.p = p;
     }
 }
