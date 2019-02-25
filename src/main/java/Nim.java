@@ -15,6 +15,10 @@ public class Nim {
         this.computerPlayer = computerPlayer;
     }
 
+    public Move getHumanMove() {
+
+    }
+
     public boolean isInteger(String s) {
         Scanner sc = new Scanner(s.trim());
         if (!sc.hasNextInt(10)) return false;
