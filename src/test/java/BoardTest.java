@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class BoardTest {
@@ -23,6 +24,14 @@ public class BoardTest {
         board = new Board(3);
 
         System.setOut(new PrintStream(outContent));
+    }
+
+    @Test
+    public void generateBoard() {
+        board.generateBoard();
+        assertTrue(board.getP()[0] > 0 && board.getP()[0] <= 10);
+        assertTrue(board.getP()[1] > 0 && board.getP()[1] <= 10);
+        assertTrue(board.getP()[2] > 0 && board.getP()[2] <= 10);
     }
 
     @Test

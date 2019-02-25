@@ -6,6 +6,10 @@ public class Board {
         p = new int[num];
     }
 
+    public void generateBoard() {
+
+    }
+
     public int[] getP() {
         return p;
     }
