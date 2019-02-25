@@ -26,7 +26,7 @@ public class ScoreBoard {
     }
 
     public int getLoss() {
-        return 0;
+        return 1;
     }
 
 
