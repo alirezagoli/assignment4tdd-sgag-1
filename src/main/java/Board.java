@@ -71,6 +71,10 @@ public class Board {
         return true;
     }
 
+    public boolean gameOver() {
+
+    }
+
     public int[] getPiles() {
         return piles;
     }

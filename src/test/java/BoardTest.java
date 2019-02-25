@@ -92,6 +92,15 @@ public class BoardTest {
     }
 
     @Test
+    public void gameOver() {
+        board.setPiles(new int[]{0, 0, 0});
+        assertTrue(board.gameOver());
+
+        board.setPiles(new int[]{2, 0, 4});
+        assertFalse(board.gameOver());
+    }
+
+    @Test
     public void getPiles() {
         board.setPiles(new int[]{0, 0, 0});
         assertArrayEquals(new int[]{0, 0, 0}, board.getPiles());
