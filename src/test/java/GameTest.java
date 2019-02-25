@@ -63,6 +63,16 @@ public class GameTest {
         InputStream stream = new ByteArrayInputStream(input.getBytes());
         System.setIn(stream);
         assertEquals(9, game.getNumPileFromPlayer());
+
+        input = "10\n5";
+        stream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(stream);
+        assertEquals(5, game.getNumPileFromPlayer());
+
+        input = "bb\n2";
+        stream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(stream);
+        assertEquals(2, game.getNumPileFromPlayer());
     }
 
     @Test
