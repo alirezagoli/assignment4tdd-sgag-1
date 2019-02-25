@@ -19,6 +19,7 @@ public class GameTest {
     public void setUp() throws Exception {
         game = new Game();
         game.setPlayerName("PlayerName");
+        game.setScoreBoard(scoreBoard);
         System.setOut(new PrintStream(outContent));
     }
 

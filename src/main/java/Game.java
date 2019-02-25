@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Game {
 
     private String playerName;
+    private ScoreBoard scoreBoard;
 
 
     void showMenu() {
@@ -56,6 +57,11 @@ public class Game {
     }
 
     void updateScoreboard(boolean winTheGame) {
+        if (winTheGame) {
+            scoreBoard.incrementWin();
+        } else {
+            scoreBoard.incrementLoss();
+        }
     }
 
     public String getPlayerName() {
@@ -64,5 +70,9 @@ public class Game {
 
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
+    }
+
+    public void setScoreBoard(ScoreBoard scoreBoard) {
+        this.scoreBoard = scoreBoard;
     }
 }
