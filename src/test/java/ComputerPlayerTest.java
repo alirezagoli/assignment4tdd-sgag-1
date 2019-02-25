@@ -18,5 +18,9 @@ public class ComputerPlayerTest {
         Move answer = computerPlayer.play(piles);
         assertTrue(answer.getPileIndex() >= 0 && answer.getPileIndex() < piles.length);
         assertTrue(answer.getNumStone() <= piles[answer.getPileIndex()] && answer.getNumStone() >= 1);
+
+        piles = new int[]{0, 0, 0, 0, 6, 0, 0, 0};
+        answer = computerPlayer.play(piles);
+        assertTrue(answer.getPileIndex() >= 0 && answer.getPileIndex() < piles.length);
     }
 }
