@@ -15,6 +15,10 @@ public class Nim {
         this.computerPlayer = computerPlayer;
     }
 
+    /**
+     * Start the game and continue it by changing the turn.
+     * Also checks if the game is over.
+     */
     public boolean start() {
         while (!board.gameOver()) {
             if (turnToPlay) {
@@ -46,6 +50,10 @@ public class Nim {
         return turnToPlay;
     }
 
+    /**
+     *  It interacts with user to get its move
+     * @return The move object representing user move
+     */
     public Move getHumanMove() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -66,7 +74,7 @@ public class Nim {
             }
         }
     }
-
+    
     public boolean isInteger(String s) {
         Scanner sc = new Scanner(s.trim());
         if (!sc.hasNextInt(10)) return false;
