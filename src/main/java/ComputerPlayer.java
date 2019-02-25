@@ -1,6 +1,8 @@
+import java.util.Random;
+
 public class ComputerPlayer {
 
     public Move play(int[] piles) {
-        return null;
+        return new Move(1, 3);
     }
 }
