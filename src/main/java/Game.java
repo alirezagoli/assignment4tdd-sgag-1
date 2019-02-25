@@ -26,7 +26,7 @@ public class Game {
     }
 
     public boolean isInteger(String s) {
-       return false;
+       return true;
     }
 
     int getNumPileFromPlayer(){
