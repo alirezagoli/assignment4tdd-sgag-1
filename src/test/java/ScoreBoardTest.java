@@ -15,8 +15,9 @@ public class ScoreBoardTest {
 
     @Before
     public void setUp() throws Exception {
-        scoreBoard = new ScoreBoard();
+        scoreBoard = new ScoreBoard("PlayerName");
         System.setOut(new PrintStream(outContent));
+        System.setProperty("line.separator", "\n");
     }
 
     @After
