@@ -23,4 +23,11 @@ public class ScoreBoardTest {
         scoreBoard.incrementWin();
         assertEquals(1, scoreBoard.getWin());
     }
+
+    @Test
+    public void incrementLoss() {
+        scoreBoard.setLoss(0);
+        scoreBoard.incrementLoss();
+        assertEquals(1, scoreBoard.getLoss());
+    }
 }

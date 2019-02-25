@@ -10,6 +10,10 @@ public class ScoreBoard {
         win= win+1;
     }
 
+    public void incrementLoss() {
+
+    }
+
     public void setWin(int i) {
         win=i;
     }
@@ -17,4 +21,13 @@ public class ScoreBoard {
     public int getWin() {
         return win;
     }
+
+    public void setLoss(int loss) {
+    }
+
+    public int getLoss() {
+        return 0;
+    }
+
+
 }
