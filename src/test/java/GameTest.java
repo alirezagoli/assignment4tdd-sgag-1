@@ -15,6 +15,7 @@ public class GameTest {
     @Before
     public void setUp() throws Exception {
         game = new Game();
+        game.setPlayerName("PlayerName");
         System.setOut(new PrintStream(outContent));
     }
 
