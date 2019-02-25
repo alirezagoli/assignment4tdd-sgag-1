@@ -2,25 +2,28 @@ import java.util.Random;
 
 public class Board {
 
-    private int[] p;
+    private int[] piles; // Array representing the piles on the board
 
-    public Board(int num) {
-        p = new int[num];
+    public Board(int numPiles) {
+        piles = new int[numPiles];
     }
 
+    /**
+     * Generate a board randomly
+     */
     public void generateBoard() {
         Random random = new Random();
-        for (int i = 0; i < p.length; i++) {
+        for (int i = 0; i < piles.length; i++) {
             int numStone = random.nextInt(10) + 1;
-            p[i] = numStone;
+            piles[i] = numStone;
         }
     }
 
-    public int[] getP() {
-        return p;
+    public int[] getPiles() {
+        return piles;
     }
 
-    public void setP(int[] p) {
-        this.p = p;
+    public void setPiles(int[] piles) {
+        this.piles = piles;
     }
 }
