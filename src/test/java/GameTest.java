@@ -2,8 +2,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +10,7 @@ public class GameTest {
     Game game;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
+    private final InputStream originalIn = System.in;
 
     @Before
     public void setUp() throws Exception {
@@ -22,6 +22,7 @@ public class GameTest {
     @After
     public void tearDown() throws Exception {
         System.setOut(originalOut);
+        System.setIn(originalIn);
     }
 
     @Test
@@ -54,5 +55,13 @@ public class GameTest {
                 "But remember you need to remove at least one stone\n" +
                 "The player how has not any valid move will lose!\n\n";
         assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void getNumPileFromPlayer() throws IOException {
+        String input = "9\n";
+        InputStream stream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(stream);
+        assertEquals(9, game.getNumPileFromPlayer());
     }
 }

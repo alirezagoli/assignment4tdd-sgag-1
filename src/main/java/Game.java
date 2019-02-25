@@ -25,6 +25,10 @@ public class Game {
         System.out.print("The player how has not any valid move will lose!\n\n");
     }
 
+    int getNumPileFromPlayer(){
+        return 0;
+    }
+
     public String getPlayerName() {
         return playerName;
     }
