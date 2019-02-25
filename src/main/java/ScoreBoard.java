@@ -15,6 +15,10 @@ public class ScoreBoard {
         loss=loss+1;
     }
 
+    public void print() {
+
+    }
+
     public void setWin(int win) {
         this.win = win;
     }
