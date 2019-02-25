@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Game {
 
     private String playerName;
@@ -26,7 +28,12 @@ public class Game {
     }
 
     public boolean isInteger(String s) {
-       return true;
+        Scanner sc = new Scanner(s.trim());
+        if (!sc.hasNextInt(10)) return false;
+        // we know it starts with a valid int, now make sure
+        // there's nothing left!
+        sc.nextInt(10);
+        return !sc.hasNext();
     }
 
     int getNumPileFromPlayer(){
