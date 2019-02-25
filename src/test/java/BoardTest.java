@@ -47,6 +47,8 @@ public class BoardTest {
     @Test
     public void makeMove() {
         Move move = mock(Move.class);
+        piles = new int[]{3, 4, 6};
+        board.setPiles(piles);
 
         // Scenario 1:
         // move = (1, 1) -> true
