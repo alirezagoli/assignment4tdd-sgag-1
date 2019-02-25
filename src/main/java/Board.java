@@ -19,6 +19,10 @@ public class Board {
         }
     }
 
+    public void print() {
+
+    }
+
     public int[] getPiles() {
         return piles;
     }

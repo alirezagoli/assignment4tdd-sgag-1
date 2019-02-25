@@ -5,8 +5,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class BoardTest {
@@ -32,6 +31,15 @@ public class BoardTest {
         assertTrue(board.getPiles()[0] > 0 && board.getPiles()[0] <= 10);
         assertTrue(board.getPiles()[1] > 0 && board.getPiles()[1] <= 10);
         assertTrue(board.getPiles()[2] > 0 && board.getPiles()[2] <= 10);
+    }
+
+    @Test
+    public void print() {
+        board.setPiles(new int[]{3, 2, 4});
+        board.print();
+
+        String expectedOutput = "\n\t \t \tX\n\tX\t \tX\n\tX\tX\tX\n\tX\tX\tX\n\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\n\t1\t2\t3\n\n\n";
+        assertEquals(expectedOutput, outContent.toString());
     }
 
     @Test
