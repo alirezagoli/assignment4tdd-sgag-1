@@ -8,6 +8,6 @@ public class ScoreBoard {
     }
 
     public int getWin() {
-        return 0;
+        return 1;
     }
 }
