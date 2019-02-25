@@ -68,5 +68,11 @@ public class GameTest {
     @Test
     public void isInteger() {
         assertTrue(game.isInteger("0"));
+        assertTrue(game.isInteger("5"));
+        assertFalse(game.isInteger("abc"));
+        assertFalse(game.isInteger("a1"));
+        assertFalse(game.isInteger("1a"));
+        assertFalse(game.isInteger("1a1"));
+        assertFalse(game.isInteger("10 s"));
     }
 }
