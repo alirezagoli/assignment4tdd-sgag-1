@@ -25,6 +25,7 @@ public class BoardTest {
         board = new Board(3);
 
         System.setOut(new PrintStream(outContent));
+        System.setProperty("line.separator", "\n");
     }
 
     @Test
