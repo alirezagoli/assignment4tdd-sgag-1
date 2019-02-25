@@ -16,7 +16,24 @@ public class Nim {
     }
 
     public Move getHumanMove() {
-
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("It's " + playerName + "'s turn. Which pile do you want to choose?");
+            String numPileStr = scanner.nextLine();
+            if (isInteger(numPileStr)) {
+                int numPile = Integer.parseInt(numPileStr);
+                System.out.println("How many stone do you want to remove?");
+                String numStoneStr = scanner.nextLine();
+                if (isInteger(numStoneStr)) {
+                    int numStone = Integer.parseInt(numStoneStr);
+                    return new Move(numPile - 1, numStone);
+                } else {
+                    System.out.println("Not a valid input! Please try again.\n");
+                }
+            } else {
+                System.out.println("Not a valid input! Please try again.\n");
+            }
+        }
     }
 
     public boolean isInteger(String s) {
