@@ -5,6 +5,9 @@ public class Game {
     private String playerName;
     private ScoreBoard scoreBoard;
 
+    public static void main(String[] args) {
+    }
+
 
     void showMenu() {
         System.out.print("Please choose one of the following options " + playerName+ "\n" );

@@ -102,4 +102,20 @@ public class GameTest {
         game.updateScoreboard(winTheGame);
         verify(scoreBoard).incrementLoss();
     }
+
+    @Test
+    public void main() {
+        String[] args = null;
+
+        String input = "PlayerName\n2\n3";
+        InputStream stream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(stream);
+        Game.main(args);
+        String expectedOutput = "Please choose one of the following options PlayerName\n" +
+                "1. Start new game\n" +
+                "2. How to play?\n" +
+                "3. Exit\n";
+        assertEquals(expectedOutput, outContent.toString());
+
+    }
 }
