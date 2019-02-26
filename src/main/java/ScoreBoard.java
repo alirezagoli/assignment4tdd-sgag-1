@@ -19,13 +19,13 @@ public class ScoreBoard {
     }
 
     public void print() {
-        System.out.println("---------------------------------------");
+        System.out.print("---------------------------------------\n");
         System.out.printf("%15s %15s", playerName + " Win", playerName + " Loss");
-        System.out.println();
-        System.out.println("---------------------------------------");
+        System.out.print("\n");
+        System.out.print("---------------------------------------\n");
         System.out.format("%10s %15s", win, loss);
-        System.out.println();
-        System.out.println("---------------------------------------");
+        System.out.print("\n");
+        System.out.print("---------------------------------------\n");
     }
 
     public void setWin(int win) {

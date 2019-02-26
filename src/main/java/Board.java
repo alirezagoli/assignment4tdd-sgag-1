@@ -33,7 +33,7 @@ public class Board {
         }
 
         StringBuilder sb = new StringBuilder();
-        System.out.println();
+        System.out.print("\n");
         for (int i = maxStone; i > 0; i--) {
             for (int j = 0; j < piles2.length; j++) {
                 if (piles2[j] == i) {
@@ -43,22 +43,22 @@ public class Board {
                     sb.append("\t ");
                 }
             }
-            System.out.println(sb.toString());
+            System.out.print(sb.toString() + "\n");
             sb.setLength(0);
         }
 
         for (int i = 0; i < piles.length; i++) {
             sb.append("\u203E\u203E\u203E\u203E\u203E\u203E\u203E");
         }
-        System.out.println(sb.toString());
+        System.out.print(sb.toString() + "\n");
         sb.setLength(0);
 
         for (int i = 0; i < piles.length; i++) {
             sb.append("\t");
             sb.append((i + 1));
         }
-        System.out.println(sb.toString());
-        System.out.println("\n");
+        System.out.print(sb.toString() + "\n");
+        System.out.print("\n\n");
     }
 
     /**
