@@ -4,8 +4,14 @@ public class Game {
 
     private String playerName;
     private ScoreBoard scoreBoard;
+    private Nim nim;
 
     public static void main(String[] args) {
+        Game game = new Game();
+        Scanner scanner = new Scanner(System.in);
+        game.setPlayerName(scanner.nextLine());
+        game.setScoreBoard(new ScoreBoard(game.getPlayerName()));
+        game.showMenu();
     }
 
 
