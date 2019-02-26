@@ -9,9 +9,40 @@ public class Game {
     public static void main(String[] args) {
         Game game = new Game();
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the game of Game");
+        System.out.println("What is your name?");
         game.setPlayerName(scanner.nextLine());
         game.setScoreBoard(new ScoreBoard(game.getPlayerName()));
-        game.showMenu();
+
+        boolean exit = false;
+        while (!exit) {
+
+            game.showMenu();
+            int option = scanner.nextInt();
+            switch (option) {
+                case 1:
+                    scanner.nextLine();
+                    Board board = new Board(game.getNumPileFromPlayer());
+                    board.generateBoard();
+                    ComputerPlayer computerPlayer = new ComputerPlayer();
+                    game.nim = new Nim(game.playerName, board, computerPlayer, false);
+                    boolean winTheGame = game.nim.start();
+                    System.out.println("Game is over. Here are the results so far.\n");
+                    game.updateScoreboard(winTheGame);
+                    game.scoreBoard.print();
+                    break;
+                case 2:
+                    game.showHelp();
+                    break;
+                case 3:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Oops! Wrong option. You need to pick a valid one. Try Again\n");
+                    break;
+            }
+        }
     }
 
 
